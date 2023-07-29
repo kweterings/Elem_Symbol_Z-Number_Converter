@@ -15,7 +15,7 @@ if len(sys.argv) < 2:
     print('No Input! Please provide an element symbol or Z number as command line argument.')
     quit(1)
 for i in sys.argv[1:]:
-    if i.lower() in s or 0 < int(i) <= 118:
+    if i.lower() in s or (i.lstrip('-').isdigit() and 0 < int(i) <= 118):
         readable.append(i)
 unreadable = [x for x in sys.argv[1:] if x not in readable]
 if len(unreadable) > 0:

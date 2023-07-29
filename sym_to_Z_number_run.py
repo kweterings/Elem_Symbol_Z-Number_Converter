@@ -49,7 +49,7 @@ n = 1
 while cond:
     if n == 1:
         user_input = input("What Element Symbol or Atomic/Z number would you like to convert? You may enter as many "
-                           "as you'd like. (to quit, type q):")
+                           "as you'd like (No commas!). (to quit, type q):")
         n = 0
     else:
         user_input = input("What Element Symbol or Atomic/Z number would you like to convert? (to quit, type q):")
