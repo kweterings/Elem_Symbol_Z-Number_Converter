@@ -44,7 +44,7 @@ call upon this script in your work, please do the following;</div>
 
 ```python
 import sym_to_Z_number_exec
-sym_to_Z_number_exec.convert(2, 'He', 'Ge', 76, 14)     #convert is the definition which performs the conversion
+sym_to_Z_number_exec.convert(2, 'He', 'Ge', 76, 14)     #Convert is the definition which performs the conversion
 ```
 The argument can of course also be a variable previously defined in the code.   
 I have made it so that if any arguments to not represent an element symbol or atomic number, the code will
@@ -55,3 +55,21 @@ The 3rd and final format of the converter is the generic program, which asks for
 The program will take as many element symbols or atomic numbers to be converted at once, and will keep asking for 
 more user input after each output. To terminate the program, the user simply has to type 'q' and enter to stop the code.  
 Feel free to try out this program to see what im talking about :stuck_out_tongue_winking_eye:!
+
+### <u>Intricacies of the code</u>
+The code will manage to return the desired converted value regardless of any oddly formatted inputs
+or strings. If the input has spaces either-side of the symbol or number, or the inputs/arguments are spaced far apart (many spaces typed 
+between them), the code still picks up what it needs and returns the correct output. If the atomic number
+is too large or negative (or 0), the code will negate these or quit all while making you aware of which inputs couldn't 
+be converted. Even is the element symbol isn't capitalised in the right places, the code will still return the correct 
+atomic number. As an example, File 1 would work as follows;
+```
+$ ./sym_to_Z_number_cmdline.py      v    hE     -32      23123   ijija234131
+Can't convert argument(s): -32 23123 ijija234131
+Output: 23 2
+```
+## Final words
+I hope whoever chooses to use my code is happy with it and is glad not to have to go through the soul draining task
+of copying down the entire periodic table :satisfied:! I am here to save the day.  
+I am relatively new to using Git and this is one of my first projects, hence any feedback or push requests
+would be greatly appreciated.
