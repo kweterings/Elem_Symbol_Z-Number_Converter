@@ -11,10 +11,13 @@ s = ["h", "he", "li", "be", "b", "c", "n", "o", "f", "ne", "na", "mg", "al", "si
 
 def convert(*arg):
     arg = list(arg)
+    for d in range(len(arg)):
+        if isinstance(arg[d], str):
+            arg[d] = arg[d].strip()
     readable = []
     if len(arg) == 0:
         print('No Input! Please provide an element symbol or Z number as command line argument.')
-        quit()
+        quit(1)
     arg = list(map(lambda x: x.lower() if str(x).isalpha() else x, arg))
     for i in arg:
         if str(i).lower() in s or str.isdigit(str(i).lstrip('-')):
@@ -22,6 +25,7 @@ def convert(*arg):
     unreadable = [x for x in arg if x not in readable]
     if len(unreadable) > 0:
         print(f"Can't convert argument(s):", *unreadable)
+        quit(1)
     list1 = []
     too_big = []
     too_small = []
@@ -35,7 +39,7 @@ def convert(*arg):
         if k in s:
             list1.append(s.index(k) + 1)
         elif str.isdigit(str(k)):
-            list1.append(s[k - 1].capitalize())
+            list1.append(s[int(k) - 1].capitalize())
     if len(too_big) > 0 or len(too_small):
         too_big = ', '.join(map(str, too_big))
         too_small = ', '.join(map(str, too_small))
@@ -43,5 +47,5 @@ def convert(*arg):
             print(f"Atomic/Z number ({too_big}) is brobdingnagian, doesn't exist")
         if len(too_small) > 0:
             print(f"Atomic/Z numbers ({too_small}) are 0 or negative, doesn't exist!")
-        quit()
+        quit(1)
     print(*list1)
