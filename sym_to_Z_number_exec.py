@@ -15,30 +15,33 @@ def convert(*arg):
     if len(arg) == 0:
         print('No Input! Please provide an element symbol or Z number as command line argument.')
         quit()
-    arg = map(lambda x: x.lower() if str(x).isalpha() else x, arg)
+    arg = list(map(lambda x: x.lower() if str(x).isalpha() else x, arg))
     for i in arg:
-        if str(i).lower() in s or str.isdigit(str(i)):
+        if str(i).lower() in s or str.isdigit(str(i).lstrip('-')):
             readable.append(i)
     unreadable = [x for x in arg if x not in readable]
     if len(unreadable) > 0:
         print(f"Can't convert argument(s):", *unreadable)
-        quit()
     list1 = []
     too_big = []
+    too_small = []
     for k in readable:
         if isinstance(k, int) and k > len(s):
             too_big.append(k)
+            continue
+        if str.isdigit(str(k).lstrip('-')) and int(k) <= 0:
+            too_small.append(k)
             continue
         if k in s:
             list1.append(s.index(k) + 1)
         elif str.isdigit(str(k)):
             list1.append(s[k - 1].capitalize())
-    if len(too_big) > 0:
+    if len(too_big) > 0 or len(too_small):
         too_big = ', '.join(map(str, too_big))
-        print(f"Atomic/Z number ({too_big}) is brobdingnagian, doesn't exist")
+        too_small = ', '.join(map(str, too_small))
+        if len(too_big) > 0:
+            print(f"Atomic/Z number ({too_big}) is brobdingnagian, doesn't exist")
+        if len(too_small) > 0:
+            print(f"Atomic/Z numbers ({too_small}) are 0 or negative, doesn't exist!")
         quit()
     print(*list1)
-
-
-convert(1, 2, 3, 'h', 'mg')
-

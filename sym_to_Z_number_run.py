@@ -53,6 +53,6 @@ while cond:
         n = 0
     else:
         user_input = input("What Element Symbol or Atomic/Z number would you like to convert? (to quit, type q):")
-    convert(*user_input.split())
-    if user_input.lower().replace(" ", "") == 'q':
+    if 'q' in user_input.lower().replace(" ", ""):
         quit()
+    convert(*user_input.split())
