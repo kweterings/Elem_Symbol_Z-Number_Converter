@@ -13,9 +13,9 @@ s = ["h", "he", "li", "be", "b", "c", "n", "o", "f", "ne", "na", "mg", "al", "si
 readable = []
 if len(sys.argv) < 2:
     print('No Input! Please provide an element symbol or Z number as command line argument.')
-    quit()
+    quit(1)
 for i in sys.argv[1:]:
-    if i.lower() in s or (str.isdigit(i) and int(i) <= 118):
+    if i.lower() in s or 0 < int(i) <= 118:
         readable.append(i)
 unreadable = [x for x in sys.argv[1:] if x not in readable]
 if len(unreadable) > 0:
@@ -24,10 +24,11 @@ if len(unreadable) > 0:
 output = []
 for z in readable:
     if z.lower() in s:
-        z_number = s.index(z) + 1
+        z_number = s.index(z.lower()) + 1
         output.append(z_number)
     elif str.isdigit(z):
         elem_symbol = s[int(z)-1].capitalize()
         output.append(elem_symbol)
 
-print(f"Output:", *output)
+if len(output) > 0:
+    print(f"Output:", *output)

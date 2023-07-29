@@ -20,7 +20,7 @@ def convert(*arg):
         quit(1)
     arg = list(map(lambda x: x.lower() if str(x).isalpha() else x, arg))
     for i in arg:
-        if str(i).lower() in s or str.isdigit(str(i).lstrip('-')):
+        if str(i).lower() in s or str(i).lstrip('-').isdigit():
             readable.append(i)
     unreadable = [x for x in arg if x not in readable]
     if len(unreadable) > 0:
