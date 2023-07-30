@@ -1,5 +1,12 @@
 #!/bin/python3
 
+#############################################
+#Author: Kai Weterings
+#Date: 30/07/2023
+
+#https://github.com/kweterings/Sym_To_Z_Number
+#############################################
+
 import sys
 
 s = ["h", "he", "li", "be", "b", "c", "n", "o", "f", "ne", "na", "mg", "al", "si", "p", "s", "cl", "ar", "k", "ca",

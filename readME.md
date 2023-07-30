@@ -1,4 +1,4 @@
-# <u> Element Symbol To Atomic/Z Number Converter </u>
+# <u>Element Symbol To Atomic/Z Number Converter </u>
 ###### Made by Kai Weterings, 30/07/2023
 
 <div style="text-align: justify">
