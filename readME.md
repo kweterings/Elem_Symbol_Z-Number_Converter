@@ -48,7 +48,9 @@ sym_to_Z_number_exec.convert(2, 'He', 'Ge', 76, 14)     #Convert is the definiti
 ```
 The argument can of course also be a variable previously defined in the code.   
 I have made it so that if any arguments to not represent an element symbol or atomic number, the code will
-return the troubling inputs and quit with error code 1 (to prevent your work from continuing to run with faulty inputs).
+return the troubling inputs and quit with error code 1 (to prevent your work from continuing to run with faulty inputs).  
+<u>Note</u>: The end result of the script is a print() of the output. This should be changed to whatever is desired as an output.
+
 
 ### File 3: sym_to_Z_number_run.py
 The 3rd and final format of the converter is the generic program, which asks for user input upon being run. 
