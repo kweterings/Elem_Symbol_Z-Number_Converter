@@ -5,7 +5,7 @@
 I present to you a conversion that works both ways for Element Symbols (ex: H, He, Li, Be, etc... )
 to Atomic/Z number (number of protons in nucleus).</div>
 <div style="text-align: justify">
-Whilst performing a data sweep for benchmarking a Monte Carlo code about reactions of radiation-matter, I was faced with having to turn worded information from that data files into numerical values used as input for the simulation code.
+Whilst performing a data sweep for benchmarking a Monte Carlo code about reactions of radiation-matter during an internship, I was faced with having to turn worded information from that data files into numerical values used as input for the simulation code.
 Specifying reaction channels led to needing to convert element symbols into their respective atomic numbers 
 for use in the Monte Carlo code. This led to tediously having to spend time writing out all element symbols in order
 to be able to convert element symbol into its respective atomic number.</div>
